@@ -13,15 +13,15 @@ limitations under the License.*/
  * Es la clase
  *
  * @author Juan Cordero
- * @version 1.0 22/10/21
+ * @version 1.0 25/10/21
  */
 package dominio;
 
 import java.util.ArrayList;
 
-public class Municipio {
+public class Provincia {
     private String nombre;
-    private ArrayList<Localidad> localidades = new ArrayList<>();
+    private ArrayList<Municipio> municipios = new ArrayList<>();
 
     public String getNombre(){
         return nombre;
@@ -31,30 +31,23 @@ public class Municipio {
         this.nombre = nombre;
     }
 
-    public ArrayList<Localidad> getLocalidad(){
-        return localidades;
+    public void addMunicipio(Municipio municipio){
+        municipios.add(municipio);
     }
 
-    public void setLocalidad(ArrayList<Localidad> localidades){
-        this.localidades = localidades;
-    }
-
-    public void addLocalidad(Localidad localidad){
-        localidades.add(localidad);
-    }
-
-    public int calcularNumeroDeHabitantesDeLocalidad(){
-        int numeroDehabitantes = 0;
-        for (int i =0; i < localidades.size(); i++){
-            numeroDehabitantes += localidades.get(i).getNumeroDeHabitantes();
+    public int calcularNumeroDehabitantesDeMunicipio(){
+        int numeroDeHabitantes = 0;
+        for (int i = 0; i < municipios.size(); i++){
+            numeroDeHabitantes =  municipios.get(i).calcularNumeroDeHabitantesDeLocalidad();
         }
-        return numeroDehabitantes;
+        return numeroDeHabitantes;
     }
 
     public String toString(){
-        String datos = "cuyo municipio es " + nombre + " y tiene estas localidades: \n";
-        for (int i = 0; i < localidades.size(); i++){
-            datos += localidades.get(i);
+        String datos = "El nombre de la provincia es " + nombre + " con " +
+                calcularNumeroDehabitantesDeMunicipio() + " habitantes, ";
+        for (int i = 0; i < municipios.size(); i++){
+            datos += municipios.get(i);
         }
         return datos;
     }
