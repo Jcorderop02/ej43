@@ -18,6 +18,8 @@ limitations under the License.*/
 package aplicacion;
 
 import dominio.Localidad;
+import dominio.Municipio;
+import dominio.Provincia;
 
 public class Principal {
     public static void main(String[] args){
@@ -25,6 +27,19 @@ public class Principal {
         localidad1.setNombre("Aravaca");
         localidad1.setNumeroDeHabitantes(30000);
 
-        System.out.println(localidad1);
+        Localidad localidad2 = new Localidad();
+        localidad2.setNombre("Pozuelo");
+        localidad2.setNumeroDeHabitantes(4000);
+
+        Municipio municipio1 = new Municipio();
+        municipio1.setNombre("Madrid");
+        municipio1.addLocalidad(localidad1);
+        municipio1.addLocalidad(localidad2);
+
+        Provincia provincia1 = new Provincia();
+        provincia1.setNombre("Madrid");
+        provincia1.addMunicipio(municipio1);
+
+        System.out.println(provincia1);
     }
 }
