@@ -38,6 +38,6 @@ public class Localidad {
     }
 
     public String toString() {
-        return "La localidad se llama: " + nombre + " y tiene " +numeroDeHabitantes + " habitantes";
+        return "Nombre: " + nombre + " y tiene " +numeroDeHabitantes + " habitantes" + "\n";
     }
 }

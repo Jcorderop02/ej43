@@ -42,4 +42,21 @@ public class Municipio {
     public void addLocalidad(Localidad localidad){
         localidades.add(localidad);
     }
+
+    public int calcularNumeroDeHabitantesDeLocalidad(){
+        int numeroDehabitantes = 0;
+        for (int i =0; i < localidades.size(); i++){
+            numeroDehabitantes += localidades.get(i).getNumeroDeHabitantes();
+        }
+        return numeroDehabitantes;
+    }
+
+    public String toString(){
+        String datos = "El nombre del municipio es " + nombre + " con " + calcularNumeroDeHabitantesDeLocalidad() +
+                " habitantes y tiene estas localidades: " + "\n";
+        for (int i = 0; i < localidades.size(); i++){
+            datos += localidades.get(i);
+        }
+        return datos;
+    }
 }
