@@ -23,18 +23,50 @@ public class Provincia {
     private String nombre;
     private ArrayList<Municipio> municipios = new ArrayList<>();
 
+    /**
+     * Método para obtener el nombre de la provincia
+     * @return Nombre de la provincia
+     */
     public String getNombre(){
         return nombre;
     }
 
+    /**
+     * Método para establecer el nombre de la provincia
+     * @param nombre Nueva provincia
+     */
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
 
+    /**
+     * Método para obtener los municipios de la ArrayList
+     * @return nombre del municipio
+     */
+    public ArrayList<Municipio> getMunicipios() {
+        return municipios;
+    }
+
+    /**
+     * Método para establecer los Municipios de la ArrayList
+     * @param municipios nuevo municipio que se añade
+     */
+    public void setMunicipios(ArrayList<Municipio> municipios) {
+        this.municipios = municipios;
+    }
+
+    /**
+     * Método que añade un municipio a la ArrayList
+     * @param municipio Nombre del municipio que se añade
+     */
     public void addMunicipio(Municipio municipio){
         municipios.add(municipio);
     }
 
+    /**
+     * Método para calcular el número de habitantes del municipios
+     * @return el número de habitantes que hay en los municipios
+     */
     public int calcularNumeroDehabitantesDeMunicipio(){
         int numeroDeHabitantes = 0;
         for (int i = 0; i < municipios.size(); i++){
@@ -43,6 +75,10 @@ public class Provincia {
         return numeroDeHabitantes;
     }
 
+    /**
+     * Método para devolver la información de la clase en formato String
+     * @return Informacion en formato String
+     */
     public String toString(){
         String datos = "El nombre de la provincia es " + nombre + " con " +
                 calcularNumeroDehabitantesDeMunicipio() + " habitantes, ";

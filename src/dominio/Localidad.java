@@ -21,22 +21,42 @@ public class Localidad {
     private String nombre;
     private int numeroDeHabitantes;
 
+    /**
+     * Método para obtener el nombre de la Localidad
+     * @return nombre de la localidad
+     */
     public String getNombre(){
         return nombre;
     }
 
+    /**
+     * Método para establecer el nombre de la localidad
+     * @param nombre Nombre de la localidad
+     */
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
 
+    /**
+     * Método para obtener el numero de habitantes
+     * @return numero de habitantes que hay
+     */
     public int getNumeroDeHabitantes(){
         return numeroDeHabitantes;
     }
 
+    /**
+     * Método para establecer el numero de habitantes
+     * @param numeroDeHabitantes Número de habitantes
+     */
     public void setNumeroDeHabitantes(int numeroDeHabitantes){
         this.numeroDeHabitantes = numeroDeHabitantes;
     }
 
+    /**
+     * Método para devolver la información de la clase en formato String
+     * @return Informacion en formato String
+     */
     public String toString() {
         return "Nombre: " + nombre + " y tiene " +numeroDeHabitantes + " habitantes" + "\n";
     }

@@ -23,26 +23,51 @@ public class Municipio {
     private String nombre;
     private ArrayList<Localidad> localidades = new ArrayList<>();
 
+    /**
+     * Método para obtener el nombre del municipio
+     * @return Nombre Nombre del municipio
+     */
     public String getNombre(){
         return nombre;
     }
 
+    /**
+     * Método para establecer el nombre del municipio
+     * @param nombre Nuevo municipio
+     */
     public void setNombre(String nombre){
         this.nombre = nombre;
     }
 
+    /**
+     * Método para obtener las localidades de la ArrayList
+     * @return nombre de la localidad
+     */
     public ArrayList<Localidad> getLocalidad(){
         return localidades;
     }
+
+    /**
+     * Método para establecer las localidades de la ArrayList
+     * @param localidades nueva localidad que se añade
+     */
 
     public void setLocalidad(ArrayList<Localidad> localidades){
         this.localidades = localidades;
     }
 
+    /**
+     * Método que añade una localidad a la ArrayList
+     * @param localidad Nombre de la localidad que se añade
+     */
     public void addLocalidad(Localidad localidad){
         localidades.add(localidad);
     }
 
+    /**
+     * Método para calcular el número de habitantes de la localidad
+     * @return el número de habitantes que hay en la localidad
+     */
     public int calcularNumeroDeHabitantesDeLocalidad(){
         int numeroDehabitantes = 0;
         for (int i =0; i < localidades.size(); i++){
@@ -51,6 +76,10 @@ public class Municipio {
         return numeroDehabitantes;
     }
 
+    /**
+     * Método para devolver la información de la clase en formato String
+     * @return Informacion en formato String
+     */
     public String toString(){
         String datos = "cuyo municipio es " + nombre + " y tiene estas localidades: \n";
         for (int i = 0; i < localidades.size(); i++){
